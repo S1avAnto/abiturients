@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:1.23.2-alpine
+    volumes:
+      - ./public:/var/www/public
+      - ./nginx/conf.d/:/etc/nginx/conf.d
+      - ./img:/var/www/img
+    ports:
+      - "9000:80"
+    container_name: abiturients_nginx
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/www
+    #/usr/local/etc/php
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - "9001:80"
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+
+  db:
+    image: mysql:8.0
+    restart: always
+    ports:
+      - "9906:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: abiturients
+      MYSQL_ROOT_PASSWORD: root
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci

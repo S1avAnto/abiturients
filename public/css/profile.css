@@ -1,0 +1,149 @@
+/*PROFILE*/
+
+#profile {
+    display: grid;
+    grid-template-columns: 380px auto;
+    position: relative;
+    width: 1000px;
+    min-height: 800px;
+    border-radius: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 20px;
+}
+
+#profile__userImg {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+#profile__userImg:hover {
+    cursor: pointer;
+}
+
+.profile__fraction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #2196f3;
+    background-color: #fcfdfe;
+    border-radius: 50px;
+    justify-content: space-evenly;
+    padding: 30px;
+}
+
+#profile__fraction__links a:link, #profile__fraction__links a:active, #profile__fraction__links a:visited {
+    color: #2b2929;
+    height: 20px;
+    text-decoration: none;
+    transition: .5s;
+}
+
+#profile__fraction__links a:hover {
+    color: #2196f3;
+}
+
+.profile__fraction__subject {
+    min-width: 120px;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.profile__fraction__requests {
+    margin: 20px;
+}
+
+#profile__fraction__links {
+    display: flex;
+    padding: 40px;
+    background-color: #fcfdfe;
+    border-radius: 50px;
+    height: 150px;
+    border: 1px solid #2196f3;
+    text-align: center;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/*PROFILE*/
+
+
+
+#questionnaire, #ege_results {
+    position: fixed;
+    display: flex;
+    padding: 40px;
+    background-color: #fcfdfe;
+    border: 1px solid #2196f3;
+    width: 400px;
+    height: 200px;
+    border-radius: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/*Кнопка закрыть*/
+
+.closeModal {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 24px;
+    height: 24px;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity ease 0.5s;
+}
+.closeModal:hover {
+    opacity: 1;
+}
+.closeModal::before, .closeModal::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: #2196f3;
+}
+.closeModal::before {
+    transform: rotate(45deg);
+}
+.closeModal::after {
+    transform: rotate(-45deg);
+}
+
+.is-non-active {
+    display: none !important;
+}
+
+/*Кнопка закрыть*/
+
+/*Кнопка плюс*/
+
+#add-request {
+    transform: rotate(45deg);
+    position: relative;
+    top: 0;
+    right: 0;
+}
+
+/*Кнопка плюс*/
+
+#directions{
+    background-color: red;
+}
+
+.progress-ring__circle {
+
+}
